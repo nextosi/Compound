@@ -155,6 +155,7 @@ export async function fetchTotalBorrow() {
 ```
 
 **Troubleshooting:** Ensure the contract for borrowing is deployed on the current network.
+
    ----------
 
 ### 7. priceData.js
@@ -789,6 +790,7 @@ export async function handleDeFiActions(action, tokenAddress, amount) {
 **Troubleshooting:**
 Ensure that the wallet is connected before performing any actions.
 Validate token addresses and ensure they are correct for the selected network.
+
    ----------
 
 ### 2. borrow.js
