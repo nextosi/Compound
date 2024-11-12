@@ -13,7 +13,8 @@
 9.  abiLoader.js
 10.  main.js
 11.  gasPrice.js
-    ----------
+
+---------
 
 ### 1. wallet.js
 
