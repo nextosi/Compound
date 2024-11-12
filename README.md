@@ -418,7 +418,7 @@ Provide feedback to users when events (e.g., form submissions) succeed or fail.
 Governance Folder Guide: Overview, Dependencies, Requirements, and Code Examples
 The governance folder handles decentralized governance functionality, such as creating proposals, voting on them, and delegating voting power. This folder is essential for implementing decentralized decision-making within protocols. Below is a complete guide covering each file in the governance folder, including its purpose, dependencies, requirements, and code examples.
 
-List of Files in the Governance Folder:
+### List of Files in the Governance Folder:
 1.  governance.js
 2.  createProposal.js
 3.  vote.js
@@ -438,8 +438,8 @@ Token Contracts: It requires a governance token contract (like COMP or a custom 
 Web3 provider for interacting with governance contracts.
 Governance contract ABI and address.
 The governance token contract (such as COMP).
-Key Functions:
-Initialize Governance System: Initializes the governance system by loading the governance token and governor contracts.
+**Key Functions:**
+**Initialize Governance System:** Initializes the governance system by loading the governance token and governor contracts.
 javascript
 
 ``` 
@@ -458,7 +458,7 @@ export async function initializeGovernance() {
 ```
 
 
-Check Voting Power: This function checks the user's voting power by querying the governance token contract.
+**Check Voting Power**: This function checks the user's voting power by querying the governance token contract.
 javascript
 
 ``` 
