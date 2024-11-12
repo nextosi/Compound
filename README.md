@@ -1,5 +1,6 @@
 ### Core Folder Guide: Complete Overview, Dependencies, Requirements, and Code Examples
 ### List of Files in the Core Folder:
+   
    ----------
 
 1.  wallet.js
@@ -43,6 +44,7 @@ export async function connectWallet() {
 ```
 
 **Troubleshooting:** If window.ethereum is undefined, ensure MetaMask or another Web3 wallet is installed.
+  
    ----------
 
 ### 2. tokens.js
@@ -63,6 +65,7 @@ global.tokens = {
 ```
 
 **Troubleshooting:** Ensure the correct chain ID is set, and token addresses match the network.
+ 
    ----------
 
 ### 3. markets.js
@@ -84,6 +87,7 @@ export async function fetchMarketData() {
 ```
 
 **Troubleshooting:** Handle network issues gracefully by retrying or showing error messages to the user.
+  
    ----------
 
 ### 4. userBalances.js
@@ -128,6 +132,7 @@ export async function fetchTotalSupply() {
 ```
 
 **Troubleshooting:** Ensure the contract address and ABI are correct.
+   
    ----------
 
 ### 6. totalBorrow.js
@@ -171,6 +176,7 @@ export async function fetchPriceData() {
 ```
 
 **Troubleshooting:** Ensure the contract is deployed and the ABI is correct for price retrieval.
+   
    ----------
 
 ### 8. state.js
@@ -192,6 +198,7 @@ export function setUserAccount(newAccount) {
 ```
 
 **Troubleshooting:** Ensure the state is correctly updated by using notifyListeners() to trigger updates in dependent modules.
+  
    ----------
 
 ### 9. abiLoader.js
@@ -211,6 +218,7 @@ export async function loadABI(contractName) {
 
 **Troubleshooting:** Ensure ABI files exist for the specified contract and chain ID. Handle errors if ABIs fail to load.
 
+   ----------
 ### 10. main.js
 -   **Overview:** The main entry point for the application, responsible for initializing key components such as wallet connection, token loading, and market data fetching.
 -   **Dependencies:** Depends on all other core modules (wallet.js, tokens.js, markets.js, etc.).
@@ -229,6 +237,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 **Troubleshooting:** Ensure the DOM is fully loaded before initializing, and handle cases where certain modules (like wallet or tokens) fail to load.
 
+   ----------
 11. gasPrice.js
 -   **Overview:** Fetches the current gas price to ensure that users can send transactions with the appropriate gas fee.
 -   **Dependencies:** Web3.js to interact with gas price oracles (or external APIs).
@@ -248,6 +257,7 @@ export async function fetchGasPrice() {
 ```
 
 **Troubleshooting:** Ensure a Web3 provider is available and connected to fetch gas prices.
+
    ----------
 
 ### 1. accountData.js
@@ -334,6 +344,7 @@ export async function fetchUserBorrowData() {
 Ensure token contracts are initialized correctly based on the chain ID.
 Check for Web3 provider availability when interacting with the blockchain.
 Handle Web3 call failures gracefully, such as when the user is disconnected or on the wrong network.
+  
    ----------
 
 ### 2. eventSetup.js
@@ -425,6 +436,7 @@ The governance folder handles decentralized governance functionality, such as cr
 4.  delegate.js
 5.  fetchProposal.js
 6.  cancelProposal.js
+  
    ----------
 
 ### 1. governance.js
@@ -476,6 +488,7 @@ export async function checkVotingPower(userAccount) {
 **Troubleshooting:**
 Ensure the correct ABI and governance contract addresses are used.
 Handle errors in Web3 calls and provide appropriate feedback to the user.
+  
    ----------
 
 ### 2. createProposal.js
@@ -526,6 +539,7 @@ export function validateProposalInputs(targets, values, signatures, calldatas, d
 **Troubleshooting:**
 Ensure that all necessary proposal inputs (targets, values, etc.) are provided and valid.
 Handle gas estimation errors by providing fallback gas settings or notifying the user.
+   
    ----------
 
 ### 3. vote.js
@@ -573,6 +587,7 @@ function handleVoteSubmission() {
 **Troubleshooting:**
 Ensure that proposals are active and that the user has enough voting power to cast a vote.
 Handle gas estimation errors when submitting votes.
+   
    ----------
 
 ### 4. delegate.js
@@ -617,6 +632,7 @@ function handleDelegateSubmission() {
 **Troubleshooting:**
 Ensure that the user has voting power before delegating.
 Validate that the delegatee address is a valid Ethereum address.
+   
    ----------
 
 ### 5. fetchProposal.js
@@ -660,6 +676,7 @@ function displayProposal(proposal) {
 **Troubleshooting:**
 Ensure that the proposal exists and is accessible on the current network.
 Handle cases where proposals may not exist or fail to fetch.
+  
    ----------
 
 ### 6. cancelProposal.js
@@ -715,6 +732,7 @@ List of Files in the DeFi Folder:
 5. withdraw.js
 6. transactionHistory.js
 7. healthFactor.js
+
    ----------
 
 ### 1. defiMain.js
@@ -815,6 +833,7 @@ export function validateBorrowAmount(amount) {
 **Troubleshooting:**
 Ensure the user has enough collateral before attempting to borrow.
 Handle gas estimation errors by suggesting fallback gas settings.
+   
    ----------
 
 ### 3. supply.js
@@ -859,6 +878,7 @@ export function validateSupplyAmount(amount) {
 **Troubleshooting:**
 Ensure the token contract is properly initialized and users have approved the contract to spend their tokens.
 Handle errors related to gas estimation or insufficient token balances.
+   
    ----------
 
 ### 4. repay.js
@@ -903,6 +923,7 @@ export function validateRepayAmount(amount) {
 **Troubleshooting:**
 Ensure that the user has enough of the borrowed token to repay.
 Handle cases where the repayment exceeds the total borrowed amount.
+   
    ----------
 
 ### 5. withdraw.js
@@ -947,6 +968,7 @@ export function validateWithdrawAmount(amount) {
 **Troubleshooting:**
 Ensure the user has enough supplied tokens to withdraw.
 Handle gas estimation failures or insufficient collateral cases.
+   
    ----------
 
 ### 6. transactionHistory.js
@@ -996,6 +1018,7 @@ function displayTransactions(events) {
 **Troubleshooting:**
 Ensure the contract emits events and they are indexed correctly.
 Handle cases where no events are found or where Web3 fails to fetch events.
+   
    ----------
 
 ### 7. healthFactor.js
